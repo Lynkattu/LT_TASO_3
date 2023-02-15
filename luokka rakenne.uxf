@@ -1,0 +1,58 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>272</x><y>12</y><w>496</w><h>88</h></coordinates><panel_attributes>Kanta
+--
+sql_yhteys = sqlite3.connection()
+kursori = sql_yhteys.cursor()
+--
++ luoYhteysTietokantaan(polku: str)
++ luoTaulukkoKanta()
+# luoKantaLista(tulostus: tuple, sarakkeiden_maara: int, oikealle_keskitetty = 0,  sarakekentan_koko = 13): list
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>552</x><y>348</y><w>168</w><h>64</h></coordinates><panel_attributes>Tavaratvalikko
+--
++ tavaratAlavalikko()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>424</x><y>156</y><w>224</w><h>120</h></coordinates><panel_attributes>Valikko
+--
+taso: Enum
+--
++ tulostaLista(lista: list)
++ tulosta(teksti:str)
+# syoteKokonaisluku(teksti: str): int:
+# syoteLiukuluku(teksti: str): float:
+# syoteMerkkijono(teksti: str): str
+# valikko(teksti: list[str], aloitus_teksti = ""): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>156</y><w>232</w><h>120</h></coordinates><panel_attributes>KayttajatKanta
+--
++ lisaaKayttaja(kayttajanimi: str, tiimi: str)
++ muokkaaKayttajanTiimia(kayttaja: str, tiimi: str)
+# listaaKayttajat(): list
+# etsiTiiminJasenet(tiimi: str): list
+# varmistaKayttaja(kayttajanimi: str): bool
+# poistaKayttaja(kayttajanimi: str): bool
+
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>664</x><y>156</y><w>224</w><h>88</h></coordinates><panel_attributes>TavaratKanta
+--
++ vaihdaTuotteenAro(tuote: str, uusi_arvo: float)
+# naytaTavarat(): list:
+# haeTuotteenArvo(nimike:str): str:
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>312</x><y>348</y><w>168</w><h>64</h></coordinates><panel_attributes>KayttajatValikko
+--
++ kayttajatValikko()
++ kayttajienTiedot()
++ kayttajienTavarat()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>416</x><y>460</y><w>168</w><h>72</h></coordinates><panel_attributes>Paavalikko
+--
+__kayttaja_valikko: KayttajatValikko()
+__tavarat_valikko: Tavaratvalikko()
+--
++ paavalikko()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>472</x><y>268</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>544</x><y>268</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>268</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>92</y><w>24</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>92</y><w>24</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>712</x><y>236</y><w>24</w><h>128</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>304</x><y>404</y><w>128</w><h>96</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>140;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>404</y><w>160</w><h>112</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;120;180;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>324</y><w>232</w><h>96</h></coordinates><panel_attributes>KayttajaTavaraKanta
+--
++ lisaaTavaraKayttajalle(kayttaja: str, tavara: str)
++ poistaTavaratKayttajalta(kayttaja: str)
+# listaaKayttajanienTavarat(): list
+# varmistaTavara(tavaraNimike: str): bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>152</x><y>92</y><w>136</w><h>248</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;290;10;10;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>264</x><y>340</y><w>64</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element></diagram>
